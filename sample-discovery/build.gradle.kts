@@ -1,5 +1,6 @@
 plugins {
     groovy
+    eclipse
 }
 
 dependencies {
@@ -10,4 +11,12 @@ dependencies {
     implementation(Libraries.COMMONS_LANG3)
     implementation(Libraries.TYPESAFE_CONFIG)
     testImplementation(Libraries.SPOCK_CORE)
+}
+
+
+val path = project.getPath()
+eclipse {
+    project {
+        name = (rootProject.name + path).replace(':', '-')
+    }
 }

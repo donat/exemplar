@@ -1,5 +1,6 @@
 plugins {
     groovy
+    eclipse
 }
 
 dependencies {
@@ -19,3 +20,11 @@ dependencies {
 
 // Add samples as inputs for testing
 sourceSets["test"].resources.srcDirs("src/test/samples")
+
+
+val path = project.getPath()
+eclipse {
+    project {
+        name = (rootProject.name + path).replace(':', '-')
+    }
+}

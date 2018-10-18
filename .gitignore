@@ -17,3 +17,7 @@ gradle-app.setting
 *.iws
 out/
 
+.project
+.classpath
+bin
+.settings
